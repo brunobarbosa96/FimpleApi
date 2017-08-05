@@ -23,14 +23,17 @@ module.exports = () => {
             myLocalDisk: {
                 adapter: 'disk'
             },
-			    myLocalSql: {
+            myLocalSql: {
                 adapter: 'msSql',
                 database: 'fimple',
                 host: 'fimple.database.windows.net',
                 user: 'master',
                 password: 'Fimple@2016',
                 port: 1433,
-                charset: 'utf8'
+                charset: 'utf8',
+                options: {
+                    encrypt: true   // use this for Azure databases
+                }
             }
         },
 
