@@ -11,6 +11,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 
+// Create an HTTP tunneling proxy
+const proxy = require("http").createServer((req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('okay');
+});
+
 orm.initialize(config, function (err, models) {
     if (err) throw err;
 
