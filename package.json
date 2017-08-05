@@ -9,11 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://brunobarbosa96@bitbucket.org/brunobarbosa96/sru.git"
+    "url": "git+https://github.com/brunobarbosa96/FimpleApi"
   },
   "author": "Bruno Barbosa",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/brunobarbosa96/sru#readme",
+  "homepage": "https://github.com/brunobarbosa96/FimpleApi",
   "dependencies": {
     "body-parser": "^1.15.2",
     "devbox-linq": "^3.0.3",
