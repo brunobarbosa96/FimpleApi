@@ -1,24 +1,30 @@
 {
   "name": "fimple",
-  "description": "Api do projeto da rede universitária",
-  "version": "0.0.1",
-  "author": "Bruno Barbosa",
-  "engines": {
-    "node": ">=6.9.1"
-  },
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://brunobarbosa96@bitbucket.org/brunobarbosa96/sru.git"
+  },
+  "author": "Bruno Barbosa",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/brunobarbosa96/sru#readme",
   "dependencies": {
-    "body-parser": "^1.17.2",
+    "body-parser": "^1.15.2",
     "devbox-linq": "^3.0.3",
-    "express": "^4.15.3",
-    "express-load": "^1.1.16",
-    "method-override": "^2.3.9",
+    "express": "^4.14.0",
+    "express-load": "^1.1.15",
+    "lodash": "^4.16.4",
+    "method-override": "^2.3.6",
     "sails-disk": "^0.10.10",
-    "sails-mysql": "^0.11.5",
-    "sails-postgresql": "^0.11.4",
+    //"sails-mysql": "0.12.0",
+    //"sails-postgresql": "^0.11.4",
     "sails-sqlserver": "^0.10.8",
-    "waterline": "^0.11.11"
+    "waterline": "^0.12.2"
   }
 }
