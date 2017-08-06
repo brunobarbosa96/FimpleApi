@@ -2,14 +2,12 @@
   "name": "fimple",
   "description": "Api do projeto da rede universitária",
   "version": "0.0.1",
-  "private": true,
-  "license": "MIT",
   "author": "Bruno Barbosa",
   "engines": {
     "node": ">=6.9.1"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
