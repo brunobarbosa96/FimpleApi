@@ -1,14 +1,26 @@
 {
-    "name": "fimple",
-    "description": "Api do projeto da rede universitária",
-    "version": "0.0.1",
-    "private": true,
-    "license": "MIT",
-    "author": "Bruno Barbosa",
-    "engines": {
-        "node": ">=6.9.1"
-    },
-    "scripts": {
-        "start": "node index.js"
-    }
+  "name": "fimple",
+  "description": "Api do projeto da rede universitária",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "author": "Bruno Barbosa",
+  "engines": {
+    "node": ">=6.9.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "devbox-linq": "^3.0.3",
+    "express": "^4.15.3",
+    "express-load": "^1.1.16",
+    "method-override": "^2.3.9",
+    "sails-disk": "^0.10.10",
+    "sails-mysql": "^0.11.5",
+    "sails-postgresql": "^0.11.4",
+    "sails-sqlserver": "^0.10.8",
+    "waterline": "^0.11.11"
+  }
 }
