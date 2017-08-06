@@ -1,9 +1,9 @@
-var express = require('express');//,
+//var express = require('express'),
     // bodyParser = require('body-parser'),
     // load = require('express-load'),
     // methodOverride = require('method-override'),
-    // config = require('./config/config.js')(),
-    // orm = require('./models/models.js')();
+    var config = require('./config/config.js')(),
+     orm = require('./models/models.js')();
 
 // app = express();
 
