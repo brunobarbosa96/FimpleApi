@@ -1,5 +1,3 @@
-'use strict';
-
 var express = require('express'),
     bodyParser = require('body-parser'),
     load = require('express-load'),
