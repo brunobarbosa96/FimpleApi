@@ -2,8 +2,8 @@
     // bodyParser = require('body-parser'),
     // load = require('express-load'),
     // methodOverride = require('method-override'),
-    var config = require('./config/config.js')(),
-     orm = require('./models/models.js')();
+    // var config = require('./config/config.js')(),
+    //  orm = require('./models/models.js')();
 
 // app = express();
 
