@@ -16,7 +16,7 @@ module.exports = (app) => {
                             res.status(200).json(row);
                     });
             } catch (e) {
-                res.status(500).json("Erro ao buscar cursos");
+                res.status(500).json("Erro ao buscar cursos " + e);
             }
         }
 

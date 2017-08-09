@@ -8,7 +8,6 @@ module.exports = (app) => {
                 .exec((err, row) => {
                     return callback(err, row);
                 });
-
         }
     };
 
