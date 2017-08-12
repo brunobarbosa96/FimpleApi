@@ -11,10 +11,10 @@ module.exports = (app) => {
                     { UsuarioDestino: req.params.Id }
                 ]
             }, { select: ["UsuarioEnvio", "UsuarioDestino"] })
-                .populate("UsuarioEnvio", { select: ["Id", "Nome", "Curso"] })
-                .populate("UsuarioDestino", { select: ["Id", "Nome", "Curso"] })
+                .populate("UsuarioEnvio", { select: ["Nome", "Curso"] })
+                .populate("UsuarioDestino", { select: ["Nome", "Curso"] })
                 .exec((err, row) => {
-                    curso.find({ select: ['Id', 'Nome'] }).exec((error, cursos) => {
+                    curso.find({ select: ["Nome"] }).exec((error, cursos) => {
                         if (error)
                             return callback(error);
 
@@ -44,8 +44,8 @@ module.exports = (app) => {
                 ]
             })
                 .paginate({ page: req.query.Pagina, limit: 25 })
-                .populate("UsuarioEnvio", { select: ["Id", "Nome"] })
-                .populate("UsuarioDestino", { select: ["Id", "Nome"] })
+                .populate("UsuarioEnvio", { select: ["Nome"] })
+                .populate("UsuarioDestino", { select: ["Nome"] })
                 .exec((err, row) => {
                     return callback(err, row);
                 });

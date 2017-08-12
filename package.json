@@ -1,7 +1,7 @@
 {
   "name": "fimple",
   "version": "1.0.0",
-  "description": "",
+  "description": "Api do projeto da rede social universit�ria",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -22,7 +22,8 @@
     "lodash": "^4.16.4",
     "method-override": "^2.3.6",
     "sails-disk": "^0.10.10",
+    "sails-mssql": "^0.1.1",
     "sails-mssqlserver": "^0.14.3",
-    "waterline": "^0.12.2"
+    "waterline": "^0.12.2" 
   }
 }

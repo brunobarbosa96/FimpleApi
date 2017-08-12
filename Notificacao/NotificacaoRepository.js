@@ -11,8 +11,8 @@ module.exports = (app) => {
                 {
                     select: ["Usuario", "Publicacao"]
                 })
-                .populate("Usuario", { select: ["Id", "Nome"] })
-                .populate("Publicacao", { select: ["Id", "Usuario"] })
+                .populate("Usuario", { select: ["Nome"] })
+                .populate("Publicacao", { select: ["Usuario"] })
                 .exec((err, row) => {
                     row = row.filter((x) => x.Publicacao);
                     usuario.find({ select: ["Id", "Nome", "Sobrenome"] })

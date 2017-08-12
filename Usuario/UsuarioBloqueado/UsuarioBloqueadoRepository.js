@@ -6,7 +6,7 @@ module.exports = (app) => {
 
         getAll: (req, res, callback) => {
                 usuario.findOne({ Id: req.params.Id }, {select: ["Id", "Nome", "UsuariosBloqueados"]})
-                    .populate("UsuariosBloqueados", {select: ["Id", "Nome"]})
+                    .populate("UsuariosBloqueados", {select: ["Nome"]})
                     .exec((err, row) => {
                         return callback(err, row.UsuariosBloqueados);
                     });

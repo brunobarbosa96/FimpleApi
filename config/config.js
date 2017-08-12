@@ -1,6 +1,6 @@
 ﻿var diskAdapter = require('sails-disk'),
     //postgresAdapter = require('sails-postgresql'),
-    msSqlAdapter = require('sails-mssqlserver');
+    msSqlAdapter = require('waterline-mssql');
     //mySqlAdapter = require('sails-mysql');
 
 module.exports = () => {

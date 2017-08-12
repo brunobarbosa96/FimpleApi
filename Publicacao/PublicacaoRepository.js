@@ -10,11 +10,11 @@ module.exports = (app) => {
             })
                 .sort("updatedAt DESC")
                 .paginate({ page: req.query.Pagina, limit: 30 })
-                .populate("Usuario", { select: ["Id", "Nome", "Sobrenome"] })
+                .populate("Usuario", { select: ["Nome", "Sobrenome"] })
                 .exec((err, row) => {
                     comentario.find({ select: ["Id", "Conteudo", "Publicacao", "updatedAt", "Usuario"] })
                         .sort("updatedAt ASC")
-                        .populate("Usuario", { select: ["Id", "Nome", "Sobrenome"] })
+                        .populate("Usuario", { select: ["Nome", "Sobrenome"] })
                         .exec((erro, rows) => {
                             if (erro)
                                 return callback(erro);
@@ -41,7 +41,7 @@ module.exports = (app) => {
 
         getById: (req, res, callback) => {
             publicacao.findOne({ Id: req.body.Publicacao.Id }, { select: ["Usuario"] })
-                .populate("Usuario", { select: ["Id", "Nome"] })
+                .populate("Usuario", { select: ["Nome"] })
                 .exec((err, row) => {
                     return callback(err, row);
                 });

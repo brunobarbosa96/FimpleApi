@@ -17,7 +17,7 @@ module.exports = (app) => {
                     "Cep",
                     "Curso"]
             })
-                .populate("Curso", { select: ["Id", "Nome"] })
+                .populate("Curso", { select: ["Nome"] })
                 .exec((err, row) => {
                     return callback(err, row);
                 });
@@ -37,7 +37,7 @@ module.exports = (app) => {
                     "Cep",
                     "Curso"]
             })
-                .populate("Curso", { select: ["Id", "Nome"] })
+                .populate("Curso", { select: ["Nome"] })
                 .exec((err, row) => {
                     return callback(err, row);
                 });

@@ -8,7 +8,7 @@ module.exports = (app) => {
                     { Rgm: +req.body.Email || "" },
                     { Email: req.body.Email }
                 ]
-            }).populate("Curso", { select: ["Id", "Nome"] })
+            }).populate("Curso", { select: ["Nome"] })
                 .exec((err, row) => {
                     return callback(err, row);
                 });
