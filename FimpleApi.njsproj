@@ -63,10 +63,10 @@
     <Compile Include="Usuario\UsuarioController.js" />
     <Compile Include="Usuario\UsuarioRepository.js" />
     <Compile Include="Usuario\UsuarioService.js" />
+    <None Include="FimpleApi - Web Deploy.pubxml" />
     <Content Include="web.config">
       <SubType>Code</SubType>
     </Content>
-    <None Include="FimpleApi - Web Deploy.pubxml" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>

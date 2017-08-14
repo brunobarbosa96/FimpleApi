@@ -18,12 +18,11 @@
     "body-parser": "^1.15.2",
     "devbox-linq": "^3.0.3",
     "express": "^4.14.0",
-    "express-load": "^1.1.15",
-    "lodash": "^4.16.4",
+    "express-load": "^1.1.16",
     "method-override": "^2.3.6",
     "sails-disk": "^0.10.10",
     "sails-mssql": "^0.1.1",
     "sails-mssqlserver": "^0.14.3",
-    "waterline": "^0.12.2" 
+    "waterline": "^0.11.11"  
   }
 }

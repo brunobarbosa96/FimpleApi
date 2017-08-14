@@ -5,12 +5,10 @@ module.exports = (app) => {
     var repository = {
 
         get: (req, res, callback) => {
-            publicacao.find({
-                select: ["Id", "Conteudo", "Data", "updatedAt", "Usuario"]
-            })
-                .sort("updatedAt DESC")
+            publicacao.find()
                 .paginate({ page: req.query.Pagina, limit: 30 })
                 .populate("Usuario", { select: ["Nome", "Sobrenome"] })
+                .sort("updatedAt DESC")
                 .exec((err, row) => {
                     comentario.find({ select: ["Id", "Conteudo", "Publicacao", "updatedAt", "Usuario"] })
                         .sort("updatedAt ASC")
@@ -34,7 +32,16 @@ module.exports = (app) => {
                                             }
                                         });
 
-                            return callback(err, row);
+                            return callback(err, row.map((x) => {
+                                return {
+                                        Id :x.Id, 
+                                        Conteudo: x.Conteudo, 
+                                        Data: x.Data, 
+                                        updatedAt: x.updatedAt, 
+                                        Usuario: x.Usuario,
+                                        Comentarios: x.Comentarios
+                                    }
+                            }));
                         });
                 });
         },

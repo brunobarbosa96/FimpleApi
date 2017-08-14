@@ -4,9 +4,14 @@ module.exports = (app) => {
     var repository = {
 
         getAll: (req, res, callback) => {
-            curso.find({ select: ['Id', 'Nome'] })
+            curso.find()
                 .exec((err, row) => {
-                    return callback(err, row);
+                    return callback(err, row.map((x) => {
+                        return {
+                            Id: x.Id,
+                            Nome: x.Nome
+                        }
+                    }));
                 });
         }
     };
