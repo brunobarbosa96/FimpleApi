@@ -11,10 +11,10 @@ module.exports = (app) => {
                     { UsuarioDestino: req.params.Id }
                 ]
             }, { select: ["UsuarioEnvio", "UsuarioDestino"] })
-                .populate("UsuarioEnvio", { select: ["Nome", "Curso"] })
-                .populate("UsuarioDestino", { select: ["Nome", "Curso"] })
+                .populate("UsuarioEnvio", { select: ["Id", "Nome", "Curso"] })
+                .populate("UsuarioDestino", { select: ["Id", "Nome", "Curso"] })
                 .exec((err, row) => {
-                    curso.find({ select: ["Nome"] }).exec((error, cursos) => {
+                    curso.find({ select: ["Id", "Nome"] }).exec((error, cursos) => {
                         if (error)
                             return callback(error);
 
@@ -26,12 +26,18 @@ module.exports = (app) => {
                         var conversas = [];
                         for (var i in row)
                             if (!conversas.filter((x) => (x.UsuarioDestino.Id == row[i].UsuarioDestino.Id
-                                    && x.UsuarioEnvio.Id == row[i].UsuarioEnvio.Id)
+                                && x.UsuarioEnvio.Id == row[i].UsuarioEnvio.Id)
                                 || (x.UsuarioDestino.Id == row[i].UsuarioEnvio.Id
                                     && x.UsuarioEnvio.Id == row[i].UsuarioDestino.Id)).length)
                                 conversas.push(row[i]);
 
-                        return callback(err, conversas);
+                        return callback(err, conversas.map((x) => {
+                            return {
+                                Id: x.Id,
+                                UsuarioEnvio: x.UsuarioEnvio,
+                                UsuarioDestino: x.UsuarioDestino
+                            }
+                        }));
                     });
                 });
         },
@@ -44,8 +50,8 @@ module.exports = (app) => {
                 ]
             })
                 .paginate({ page: req.query.Pagina, limit: 25 })
-                .populate("UsuarioEnvio", { select: ["Nome"] })
-                .populate("UsuarioDestino", { select: ["Nome"] })
+                .populate("UsuarioEnvio", { select: ["Id", "Nome"] })
+                .populate("UsuarioDestino", { select: ["Id", "Nome"] })
                 .exec((err, row) => {
                     return callback(err, row);
                 });
