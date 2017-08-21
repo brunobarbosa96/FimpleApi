@@ -31,7 +31,8 @@ module.exports = (app) => {
         post: (req, res, callback) => {
             notificacao.create({
                 Usuario: req.body.Usuario.Id,
-                Publicacao: req.body.Publicacao.Id
+                Publicacao: req.body.Publicacao ? req.body.Publicacao.Id : null,
+                Evento: req.body.Evento ? req.body.Evento.Id : null
             }).exec((err, row) => {
                 return callback(err, row);
             });
