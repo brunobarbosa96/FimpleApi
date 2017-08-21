@@ -51,8 +51,13 @@ module.exports = (app) => {
             notificacao.destroy({ Id: req.params.Id }).exec((err, row) => {
                 return callback(err, row);
             });
-        }
+        },
 
+        deleteByPublicacao: (req, res, callback) => {
+            notificacao.destroy({ Publicacao: req.params.Id }).exec((err, row) => {
+                return callback(err, row);
+            });
+        },
     };
 
     return repository;

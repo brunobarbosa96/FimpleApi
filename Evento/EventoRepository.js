@@ -10,11 +10,11 @@ module.exports = (app) => {
             })
                 .sort("updatedAt DESC")
                 .paginate({ page: req.query.Pagina, limit: 30 })
-                .populate("Usuario", { select: ["Nome", "Sobrenome"] })
+                .populate("Usuario", { select: ["Id", "Nome", "Sobrenome"] })
                 .exec((err, row) => {
                     comentario.find({ select: ["Id", "Conteudo", "Evento", "updatedAt", "Usuario"] })
                         .sort("updatedAt ASC")
-                        .populate("Usuario", { select: ["Nome", "Sobrenome"] })
+                        .populate("Usuario", { select: ["Id", "Nome", "Sobrenome"] })
                         .exec((erro, rows) => {
                             if (erro)
                                 return callback(erro);
@@ -34,7 +34,18 @@ module.exports = (app) => {
                                             }
                                         });
 
-                            return callback(err, row);
+                            return callback(err, row.map((x) => {
+                                return {
+                                    Id: x.Id, 
+                                    Conteudo: x.Conteudo, 
+                                    Data: x.Data, 
+                                    updatedAt: x.updatedAt, 
+                                    Usuario: x.Usuario, 
+                                    Titulo: x.Titulo, 
+                                    Local: x.Local,
+                                    Comentarios: x.Comentarios
+                                }
+                            }));
                         });
                 });
         },

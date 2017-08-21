@@ -1,6 +1,7 @@
 module.exports = (app) => {
 
     var repository = require('./PublicacaoRepository')(app);
+    var service = require('./PublicacaoService')(app);
     var controller = {
 
         get: (req, res) => {
@@ -46,7 +47,7 @@ module.exports = (app) => {
 
         delete: (req, res) => {
             try {
-                repository.delete(req, res, (err, row) => {
+                service.delete(req, res, (err, row) => {
                     if (err)
                         res.status(500).json("Falha ao excluir publicação");
                     else

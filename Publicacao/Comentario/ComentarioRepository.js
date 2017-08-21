@@ -27,7 +27,15 @@ module.exports = (app) => {
                 .exec((err, row) => {
                     return callback(err, row);
                 });
+        },
+
+        deleteByPublicacao: (req, res, callback) => {
+            comentario.destroy({ Publicacao: req.params.Id })
+                .exec((err, row) => {
+                    return callback(err, row);
+                });
         }
+
 
     };
 
