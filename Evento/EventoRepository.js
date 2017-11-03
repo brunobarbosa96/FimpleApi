@@ -75,14 +75,7 @@ module.exports = (app) => {
 
         put: (req, res, callback) => {
             evento.update({ Id: req.body.Id }, {
-                Titulo: req.body.Titulo,
-                Conteudo: req.body.Conteudo,
-                Data: req.body.Data,
-                Local: req.body.Local,
-                Usuario: req.body.Usuario.Id,
-                Entidade: req.body.Entidade.Id,
-                Categoria: req.body.Categoria.Id,
-                Curso: req.body.Curso.Id
+                Conteudo: req.body.Conteudo
             }).exec((err, row) => {
                 return callback(err, row);
             });
